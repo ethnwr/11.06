@@ -1,0 +1,65 @@
+<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Три задания" Height="700" Width="800">
+    <TabControl>
+        <!-- Задание 1 -->
+        <TabItem Header="Анкета">
+            <ScrollViewer>
+                <StackPanel Width="700" Height="480" Margin="10">
+                    <TextBlock Text="Фамилия:" Margin="0,5"/>
+                    <TextBox x:Name="LastNameBox" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Имя:" Margin="0,5"/>
+                    <TextBox x:Name="FirstNameBox" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Отчество:" Margin="0,5"/>
+                    <TextBox x:Name="MiddleNameBox" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Пол:" Margin="0,5"/>
+                    <ComboBox x:Name="GenderCombo" Margin="0,0,0,10">
+                        <ComboBoxItem>Мужской</ComboBoxItem>
+                        <ComboBoxItem>Женский</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Text="Дата рождения:" Margin="0,5"/>
+                    <DatePicker x:Name="BirthDatePicker" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Семейный статус:" Margin="0,5"/>
+                    <TextBox x:Name="MaritalStatusBox" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Дополнительная информация:" Margin="0,5"/>
+                    <TextBox x:Name="InfoBox" Height="60" Margin="0,0,0,10"/>
+
+                    <Button Content="Save" Click="Save_Click" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <!-- Задание 2 -->
+        <TabItem Header="Разница дат">
+            <Grid>
+                <Ellipse Width="300" Height="300" Fill="LightBlue" Stroke="Black"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <DatePicker x:Name="Date1Picker" Margin="5"/>
+                    <DatePicker x:Name="Date2Picker" Margin="5"/>
+                    <Button Content="Вычислить" Click="CalculateDays_Click" Margin="5"/>
+                    <TextBlock x:Name="DaysResult" TextAlignment="Center" FontSize="16" Margin="5"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <!-- Задание 3 -->
+        <TabItem Header="Календарь">
+            <StackPanel Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBox x:Name="DayBox" Width="30" Margin="0,0,5,0"/>
+                    <TextBox x:Name="MonthBox" Width="30" Margin="0,0,5,0"/>
+                    <TextBox x:Name="YearBox" Width="50" Margin="0,0,5,0"/>
+                    <Button Content="Показать" Click="ShowDate_Click"/>
+                </StackPanel>
+                <Calendar x:Name="BirthdayCalendar"/>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</Window>
